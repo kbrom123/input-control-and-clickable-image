@@ -1,0 +1,1 @@
+# input-control-and-clickable-image
