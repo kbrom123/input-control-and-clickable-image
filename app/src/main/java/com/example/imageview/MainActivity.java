@@ -1,9 +1,12 @@
 package com.example.imageview;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -28,6 +31,31 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_order:
+                displayToast(getString(R.string.action_order_message));
+                break;
+            case R.id.action_status:
+                displayToast(getString(R.string.action_status_message));
+                break;
+            case R.id.action_contact:
+                displayToast(getString(R.string.action_contact_message));
+            case R.id.action_favorite:
+                displayToast(getString(R.string.action_favorites_message));
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     public void displayToast(String message){
         Toast.makeText(getApplicationContext(),message, Toast.LENGTH_SHORT).show();
     }

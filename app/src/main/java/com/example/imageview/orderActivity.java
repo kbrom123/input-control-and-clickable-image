@@ -37,10 +37,12 @@ public class orderActivity extends AppCompatActivity implements AdapterView.OnIt
             case R.id.sameday:
                 if(checked){
                     displayToast(getString(R.string.same_day_messenger_service));
+                    break;
                 }
             case R.id.nextday:
                 if (checked){
                     displayToast(getString(R.string.next_day_ground_delivery));
+                    break;
                 }
             case R.id.pickup:
                 if (checked){
